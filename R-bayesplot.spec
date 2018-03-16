@@ -4,7 +4,7 @@
 #
 Name     : R-bayesplot
 Version  : 1.4.0
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/bayesplot_1.4.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bayesplot_1.4.0.tar.gz
 Summary  : Plotting for Bayesian Models
@@ -17,6 +17,7 @@ Requires: R-gridExtra
 Requires: R-loo
 Requires: R-reshape2
 Requires: R-rlang
+Requires: R-rstan
 BuildRequires : R-arm
 BuildRequires : R-dplyr
 BuildRequires : R-ggplot2
@@ -24,6 +25,7 @@ BuildRequires : R-gridExtra
 BuildRequires : R-loo
 BuildRequires : R-reshape2
 BuildRequires : R-rlang
+BuildRequires : R-rstan
 BuildRequires : clr-R-helpers
 
 %description
@@ -40,11 +42,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521234235
+export SOURCE_DATE_EPOCH=1521234909
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521234235
+export SOURCE_DATE_EPOCH=1521234909
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
