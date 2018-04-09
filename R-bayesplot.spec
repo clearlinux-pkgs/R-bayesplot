@@ -4,18 +4,24 @@
 #
 Name     : R-bayesplot
 Version  : 1.5.0
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/bayesplot_1.5.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bayesplot_1.5.0.tar.gz
 Summary  : Plotting for Bayesian Models
 Group    : Development/Tools
 License  : GPL-3.0
+Requires: R-arm
 Requires: R-dplyr
 Requires: R-ggridges
+Requires: R-loo
 Requires: R-rlang
+Requires: R-rstan
+BuildRequires : R-arm
 BuildRequires : R-dplyr
 BuildRequires : R-ggridges
+BuildRequires : R-loo
 BuildRequires : R-rlang
+BuildRequires : R-rstan
 BuildRequires : clr-R-helpers
 
 %description
@@ -32,11 +38,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522436891
+export SOURCE_DATE_EPOCH=1523290287
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1522436891
+export SOURCE_DATE_EPOCH=1523290287
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
