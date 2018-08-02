@@ -1,7 +1,7 @@
-1.6.0
-R-dplyr
-R-ggridges
-R-arm
+1.5.0
 R-reshape2
-R-loo
+R-ggridges
 R-rstan
+R-dplyr
+R-loo
+R-arm
