@@ -4,21 +4,19 @@
 #
 Name     : R-bayesplot
 Version  : 1.6.0
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/bayesplot_1.6.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bayesplot_1.6.0.tar.gz
 Summary  : Plotting for Bayesian Models
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-arm
-Requires: R-dplyr
-Requires: R-ggridges
-Requires: R-loo
-Requires: R-reshape2
-Requires: R-rstan
+Requires: R-ggplot2
+Requires: R-gridExtra
 BuildRequires : R-arm
 BuildRequires : R-dplyr
+BuildRequires : R-ggplot2
 BuildRequires : R-ggridges
+BuildRequires : R-gridExtra
 BuildRequires : R-loo
 BuildRequires : R-reshape2
 BuildRequires : R-rstan
@@ -38,11 +36,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533228764
+export SOURCE_DATE_EPOCH=1552716192
 
 %install
+export SOURCE_DATE_EPOCH=1552716192
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1533228764
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -77,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library bayesplot|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  bayesplot || :
 
 
 %files
@@ -120,3 +117,81 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/bayesplot/help/paths.rds
 /usr/lib64/R/library/bayesplot/html/00Index.html
 /usr/lib64/R/library/bayesplot/html/R.css
+/usr/lib64/R/library/bayesplot/tests/figs/deps.txt
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-diagnostics/mcmc-neff-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-diagnostics/mcmc-neff-hist-binwidth.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-diagnostics/mcmc-neff-hist-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-diagnostics/mcmc-rhat-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-diagnostics/mcmc-rhat-hist-binwidth.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-diagnostics/mcmc-rhat-hist-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-diagnostics/mcmc-rhat-sized.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-inner.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-means.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-no-points.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-outer.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-rhats.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-ridges-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-ridges-inner.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-areas-ridges-outer.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-intervals-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-intervals-inner.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-intervals-means.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-intervals-no-points.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-intervals-outer.svg
+/usr/lib64/R/library/bayesplot/tests/figs/mcmc-intervals/mcmc-intervals-rhats.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-boxplot-alpha-size.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-boxplot-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-boxplot-no-notch.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-density-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-density-overlay-alpha-size.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-density-overlay-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-ecdf-overlay-alpha-size.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-ecdf-overlay-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-freq-poly-grouped-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-freqpoly-alpha-binwidth-size.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-freqpoly-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-hist-binwidth.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-hist-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-violin-grouped-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-violin-grouped-points-low-jitter.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-distributions/ppc-violin-grouped-with-points.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-intervals-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-intervals-grouped-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-intervals-grouped-x-values.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-intervals-interval-width.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-intervals-x-values.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-ribbon-default.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-ribbon-interval-width.svg
+/usr/lib64/R/library/bayesplot/tests/figs/ppc-intervals-ribbon/ppc-ribbon-x-values.svg
+/usr/lib64/R/library/bayesplot/tests/testthat.R
+/usr/lib64/R/library/bayesplot/tests/testthat/Rplots.pdf
+/usr/lib64/R/library/bayesplot/tests/testthat/data-for-binomial.rda
+/usr/lib64/R/library/bayesplot/tests/testthat/data-for-mcmc-tests.R
+/usr/lib64/R/library/bayesplot/tests/testthat/data-for-ppc-tests.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-aesthetics.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-available_ppc.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-bayesplot_grid.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-convenience-functions.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-example-draws.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-extractors.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-helpers-mcmc.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-helpers-ppc.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-helpers-shared.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-combo.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-diagnostics.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-distributions.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-intervals.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-nuts.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-recover.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-scatter-and-parcoord.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-mcmc-traces.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-pp_check.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-discrete.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-distributions.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-errors.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-input-validation.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-intervals.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-loo.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-scatterplots.R
+/usr/lib64/R/library/bayesplot/tests/testthat/test-ppc-test-statistics.R

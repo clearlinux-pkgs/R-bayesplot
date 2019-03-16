@@ -1,7 +1,9 @@
 1.6.0
-R-loo
 R-arm
 R-dplyr
-R-rstan
-R-reshape2
+R-ggplot2
 R-ggridges
+R-gridExtra
+R-loo
+R-reshape2
+R-rstan
