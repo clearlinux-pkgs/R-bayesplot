@@ -1,9 +1,13 @@
-1.6.0
+1.7.0
+R-RColorBrewer
 R-arm
 R-dplyr
+R-evaluate
 R-ggplot2
 R-ggridges
 R-gridExtra
 R-loo
 R-reshape2
 R-rstan
+R-tibble
+R-tidyselect
