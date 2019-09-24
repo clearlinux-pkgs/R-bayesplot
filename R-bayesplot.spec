@@ -4,31 +4,29 @@
 #
 Name     : R-bayesplot
 Version  : 1.7.0
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/bayesplot_1.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bayesplot_1.7.0.tar.gz
 Summary  : Plotting for Bayesian Models
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-RColorBrewer
 Requires: R-dplyr
-Requires: R-evaluate
 Requires: R-ggplot2
 Requires: R-ggridges
-Requires: R-gridExtra
+Requires: R-glue
 Requires: R-loo
 Requires: R-reshape2
+Requires: R-rlang
 Requires: R-rstan
 Requires: R-tibble
 Requires: R-tidyselect
-BuildRequires : R-RColorBrewer
 BuildRequires : R-dplyr
-BuildRequires : R-evaluate
 BuildRequires : R-ggplot2
 BuildRequires : R-ggridges
-BuildRequires : R-gridExtra
+BuildRequires : R-glue
 BuildRequires : R-loo
 BuildRequires : R-reshape2
+BuildRequires : R-rlang
 BuildRequires : R-rstan
 BuildRequires : R-tibble
 BuildRequires : R-tidyselect
@@ -48,13 +46,13 @@ prior and posterior predictive checks, and MCMC diagnostics.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558646346
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569284955
 
 %install
-export SOURCE_DATE_EPOCH=1558646346
+export SOURCE_DATE_EPOCH=1569284955
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -83,7 +81,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
