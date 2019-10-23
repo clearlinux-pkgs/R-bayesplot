@@ -4,7 +4,7 @@
 #
 Name     : R-bayesplot
 Version  : 1.7.0
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/bayesplot_1.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bayesplot_1.7.0.tar.gz
 Summary  : Plotting for Bayesian Models
@@ -14,10 +14,8 @@ Requires: R-dplyr
 Requires: R-ggplot2
 Requires: R-ggridges
 Requires: R-glue
-Requires: R-loo
 Requires: R-reshape2
 Requires: R-rlang
-Requires: R-rstan
 Requires: R-tibble
 Requires: R-tidyselect
 BuildRequires : R-dplyr
@@ -31,6 +29,7 @@ BuildRequires : R-rstan
 BuildRequires : R-tibble
 BuildRequires : R-tidyselect
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 prior and posterior predictive checks, and MCMC diagnostics. 
@@ -47,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569284955
+export SOURCE_DATE_EPOCH=1571799565
 
 %install
-export SOURCE_DATE_EPOCH=1569284955
+export SOURCE_DATE_EPOCH=1571799565
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
