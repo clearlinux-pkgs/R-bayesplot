@@ -4,7 +4,7 @@
 #
 Name     : R-bayesplot
 Version  : 1.7.1
-Release  : 35
+Release  : 36
 URL      : https://cran.r-project.org/src/contrib/bayesplot_1.7.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bayesplot_1.7.1.tar.gz
 Summary  : Plotting for Bayesian Models
@@ -14,8 +14,6 @@ Requires: R-dplyr
 Requires: R-ggplot2
 Requires: R-ggridges
 Requires: R-glue
-Requires: R-gridExtra
-Requires: R-loo
 Requires: R-reshape2
 Requires: R-rlang
 Requires: R-tibble
@@ -24,8 +22,6 @@ BuildRequires : R-dplyr
 BuildRequires : R-ggplot2
 BuildRequires : R-ggridges
 BuildRequires : R-glue
-BuildRequires : R-gridExtra
-BuildRequires : R-loo
 BuildRequires : R-reshape2
 BuildRequires : R-rlang
 BuildRequires : R-tibble
@@ -38,21 +34,22 @@ prior and posterior predictive checks, and other visualizations
 
 %prep
 %setup -q -c -n bayesplot
+cd %{_builddir}/bayesplot
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575282309
+export SOURCE_DATE_EPOCH=1589776432
 
 %install
-export SOURCE_DATE_EPOCH=1575282309
+export SOURCE_DATE_EPOCH=1589776432
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
