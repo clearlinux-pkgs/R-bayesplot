@@ -4,7 +4,7 @@
 #
 Name     : R-bayesplot
 Version  : 1.9.0
-Release  : 54
+Release  : 55
 URL      : https://cran.r-project.org/src/contrib/bayesplot_1.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bayesplot_1.9.0.tar.gz
 Summary  : Plotting for Bayesian Models
